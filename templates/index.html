@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cricket Match Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <div class="background-img"></div> <!-- Background image -->
+    <h1>Cricket Match Prediction</h1>
+    <form method="post">
+        <label for="Team_1">Team 1 (Batting First)</label>
+        <select id="Team_1" name="Team_1">
+            <option value="">Select Team</option>
+            <option value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
+            <option value="Mumbai Indians">Mumbai Indians</option>
+            <option value="Gujarat Lions">Gujarat Lions</option>
+            <option value="Rising Pune Supergiants">Rising Pune Supergiants</option>
+            <option value="Kolkata Knight Riders">Kolkata Knight Riders</option>
+            <option value="Delhi Capitals">Delhi Capitals</option>
+            <option value="Kings XI Punjab">Kings XI Punjab</option>
+            <option value="Chennai Super Kings">Chennai Super Kings</option>
+            <option value="Rajasthan Royals">Rajasthan Royals</option>
+            <option value="Kochi Tuskers Kerala">Kochi Tuskers Kerala</option>
+            <option value="Royal Challengers Bangalore">Royal Challengers Bangalore</option>
+        </select>
+
+        <label for="Team_2">Team 2 (Bowling First)</label>
+        <select id="Team_2" name="Team_2">
+            <option value="">Select Team</option>
+            <option value="Sunrisers Hyderabad">Sunrisers Hyderabad</option>
+            <option value="Mumbai Indians">Mumbai Indians</option>
+            <option value="Gujarat Lions">Gujarat Lions</option>
+            <option value="Rising Pune Supergiants">Rising Pune Supergiants</option>
+            <option value="Kolkata Knight Riders">Kolkata Knight Riders</option>
+            <option value="Delhi Capitals">Delhi Capitals</option>
+            <option value="Kings XI Punjab">Kings XI Punjab</option>
+            <option value="Chennai Super Kings">Chennai Super Kings</option>
+            <option value="Rajasthan Royals">Rajasthan Royals</option>
+            <option value="Kochi Tuskers Kerala">Kochi Tuskers Kerala</option>
+            <option value="Royal Challengers Bangalore">Royal Challengers Bangalore</option>
+        </select>
+
+        <label for="ball_left_team1">Balls Left (Team 1)</label>
+        <input type="number" id="ball_left_team1" name="ball_left_team1" required>
+
+        <label for="ball_left_team2">Balls Left (Team 2)</label>
+        <input type="number" id="ball_left_team2" name="ball_left_team2" required>
+
+        <label for="run_by_team1">Runs Scored (Team 1)</label>
+        <input type="number" id="run_by_team1" name="run_by_team1" required>
+
+        <label for="run_by_team2">Runs Scored (Team 2)</label>
+        <input type="number" id="run_by_team2" name="run_by_team2" required>
+
+        <label for="run_left">Runs Left</label>
+        <input type="number" id="run_left" name="run_left" required>
+
+        <label for="wickets_team1">Wickets Lost (Team 1)</label>
+        <input type="number" id="wickets_team1" name="wickets_team1" required>
+
+        <label for="wickets_team2">Wickets Lost (Team 2)</label>
+        <input type="number" id="wickets_team2" name="wickets_team2" required>
+
+        <label for="current_run_rate">Current Run Rate</label>
+        <input type="text" id="current_run_rate" name="current_run_rate" required>
+
+        <label for="required_run_rate">Required Run Rate</label>
+        <input type="text" id="required_run_rate" name="required_run_rate" required>
+
+        <label for="city">City</label>
+        <select id="city" name="city">
+            <option value="">Select City</option>
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Bangalore">Bangalore</option>
+            <option value="Bengaluru">Bengaluru</option>
+            <option value="Mumbai">Mumbai</option>
+            <option value="Johannesburg">Johannesburg</option>
+            <option value="Port Elizabeth">Port Elizabeth</option>
+            <option value="Pune">Pune</option>
+            <option value="Kolkata">Kolkata</option>
+            <option value="Durban">Durban</option>
+            <option value="Centurion">Centurion</option>
+            <option value="Sharjah">Sharjah</option>
+            <option value="Delhi">Delhi</option>
+            <option value="Cape Town">Cape Town</option>
+            <option value="Nagpur">Nagpur</option>
+            <option value="Raipur">Raipur</option>
+            <option value="Chandigarh">Chandigarh</option>
+            <option value="Dharamsala">Dharamsala</option>
+            <option value="Indore">Indore</option>
+            <option value="Mohali">Mohali</option>
+            <option value="Chennai">Chennai</option>
+            <option value="Ranchi">Ranchi</option>
+            <option value="Jaipur">Jaipur</option>
+            <option value="Ahmedabad">Ahmedabad</option>
+            <option value="Kochi">Kochi</option>
+            <option value="Visakhapatnam">Visakhapatnam</option>
+            <option value="Rajkot">Rajkot</option>
+            <option value="Abu Dhabi">Abu Dhabi</option>
+            <option value="Kimberley">Kimberley</option>
+            <option value="Bloemfontein">Bloemfontein</option>
+            <option value="Cuttack">Cuttack</option>
+            <option value="East London">East London</option>
+            <option value="Kanpur">Kanpur</option>
+        </select>
+
+        <label for="venue">Venue</label>
+        <select id="venue" name="venue">
+            <option value="">Select Venue</option>
+             <option value="Rajiv Gandhi International Stadium, Uppal">Rajiv Gandhi International Stadium, Uppal</option>
+            <option value="M Chinnaswamy Stadium">M Chinnaswamy Stadium</option>
+            <option value="Rajiv Gandhi Intl. Cricket Stadium">Rajiv Gandhi Intl. Cricket Stadium</option>
+            <option value="M. Chinnaswamy Stadium">M. Chinnaswamy Stadium</option>
+            <option value="Wankhede Stadium">Wankhede Stadium</option>
+            <option value="New Wanderers Stadium">New Wanderers Stadium</option>
+            <option value="St George's Park">St George's Park</option>
+            <option value="Brabourne Stadium">Brabourne Stadium</option>
+            <option value="Dr DY Patil Sports Academy">Dr DY Patil Sports Academy</option>
+            <option value="Dubai International Cricket Stadium">Dubai International Cricket Stadium</option>
+            <option value="Maharashtra Cricket Association Stadium">Maharashtra Cricket Association Stadium</option>
+            <option value="Eden Gardens">Eden Gardens</option>
+            <option value="Kingsmead">Kingsmead</option>
+            <option value="SuperSport Park">SuperSport Park</option>
+            <option value="Sharjah Cricket Stadium">Sharjah Cricket Stadium</option>
+            <option value="Feroz Shah Kotla">Feroz Shah Kotla</option>
+            <option value="Newlands">Newlands</option>
+            <option value="Vidarbha Cricket Association Stadium, Jamtha">Vidarbha Cricket Association Stadium, Jamtha</option>
+            <option value="Shaheed Veer Narayan Singh International Stadium">Shaheed Veer Narayan Singh International Stadium</option>
+            <option value="Feroz Shah Kotla Ground">Feroz Shah Kotla Ground</option>
+            <option value="Punjab Cricket Association Stadium, Mohali">Punjab Cricket Association Stadium, Mohali</option>
+            <option value="Himachal Pradesh Cricket Association Stadium">Himachal Pradesh Cricket Association Stadium</option>
+            <option value="Holkar Cricket Stadium">Holkar Cricket Stadium</option>
+            <option value="IS Bindra Stadium">IS Bindra Stadium</option>
+            <option value="MA Chidambaram Stadium, Chepauk">MA Chidambaram Stadium, Chepauk</option>
+            <option value="JSCA International Stadium Complex">JSCA International Stadium Complex</option>
+            <option value="Sawai Mansingh Stadium">Sawai Mansingh Stadium</option>
+            <option value="Sardar Patel Stadium, Motera">Sardar Patel Stadium, Motera</option>
+            <option value="Nehru Stadium">Nehru Stadium</option>
+            <option value="Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium">Dr. Y.S. Rajasekhara Reddy ACA-VDCA Cricket Stadium</option>
+            <option value="Saurashtra Cricket Association Stadium">Saurashtra Cricket Association Stadium</option>
+            <option value="Subrata Roy Sahara Stadium">Subrata Roy Sahara Stadium</option>
+            <option value="Sheikh Zayed Stadium">Sheikh Zayed Stadium</option>
+            <option value="M. A. Chidambaram Stadium">M. A. Chidambaram Stadium</option>
+            <option value="Punjab Cricket Association IS Bindra Stadium, Mohali">Punjab Cricket Association IS Bindra Stadium, Mohali</option>
+            <option value="De Beers Diamond Oval">De Beers Diamond Oval</option>
+            <option value="OUTsurance Oval">OUTsurance Oval</option>
+            <option value="Barabati Stadium">Barabati Stadium</option>
+            <option value="ACA-VDCA Stadium">ACA-VDCA Stadium</option>
+            <option value="Buffalo Park">Buffalo Park</option>
+            <option value="Green Park">Green Park</option>
+        </select>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <h2>Prediction Results</h2>
+        <p>Winning Probability of Team 1: {{ result['win_per_Team1'] }}%</p>
+        <p>Winning Probability of Team 2: {{ result['win_per_Team2'] }}%</p>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
